@@ -50,7 +50,7 @@ function formatMenuTemplateForStack(clipboard, stack) {
             click: _ => {
                 clipboard.writeText(`${stack[i]}`)
             },
-            accelerator: `Ctrl+Alt+${i+1}`
+            accelerator: `CmdOrCtrl+${i+1}`
         }
     })
 }
@@ -58,7 +58,7 @@ function formatMenuTemplateForStack(clipboard, stack) {
 function registerShortcuts(globalShortcut,clipboard,stack){
 	globalShortcut.unregisterAll();
 	for(let i=0;i<STACK_SIZE;i++){
-		globalShortcut.register(`Ctrl+Alt+${i+1}`,_=>{
+		globalShortcut.register(`CmdOrCtrl+${i+1}`,_=>{
 			clipboard.writeText(stack[i]);
 		})
 	}
